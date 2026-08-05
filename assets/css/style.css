@@ -352,21 +352,6 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
 
 @keyframes rise { to { opacity: 1; transform: translateY(0); } }
 
-.scroll-cue {
-  position: absolute;
-  left: 50%; bottom: 116px;
-  transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-  color: var(--ink-muted);
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  opacity: 0;
-  animation: rise 900ms var(--ease) 1000ms forwards;
-}
-.scroll-cue .line { width: 1px; height: 34px; background: linear-gradient(180deg, var(--ngg-orange), transparent); animation: pulse-line 1.8s ease-in-out infinite; }
-@keyframes pulse-line { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
-
 /* Badge marquee, overlapping hero bottom */
 .marquee-strip {
   position: relative;
@@ -683,12 +668,11 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
 @media (max-width: 640px) {
   .section { padding: 84px 0; }
   .hero { min-height: 620px; }
-  .scroll-cue { bottom: 90px; }
   .footer-grid { grid-template-columns: 1fr; }
   .video-section { padding: 100px 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
-  .hero-content .eyebrow, .hero-content h1, .hero-content .hero-sub, .hero-actions, .scroll-cue { opacity: 1; transform: none; }
+  .hero-content .eyebrow, .hero-content h1, .hero-content .hero-sub, .hero-actions { opacity: 1; transform: none; }
 }
