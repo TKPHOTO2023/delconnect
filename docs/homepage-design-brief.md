@@ -24,5 +24,19 @@ Build a unique, interactive Del Connect homepage — real animations/interaction
 - American Tower is a large global REIT — likely referenced for scale/credibility/institutional trust cues (stats, global footprint, investor-grade polish) rather than for creative direction.
 - Keep interactivity purposeful: motion should reinforce "precision and reliability" (the Del Connect brand feel), not feel gimmicky.
 
+## Assets received so far (photos)
+
+Shared inline in chat — not yet saved as files in this environment (no filesystem path was provided, so they can't be committed to the repo yet). Logging what they show for continuity; final versions will need to be handed off as actual files/links when ready.
+
+1. **Close-up: hand on tablet showing a glowing blue network/circuit visualization** — abstract data/connectivity graphic, dark UI with branching light-blue network pattern. Good candidate for a "network intelligence / coverage mapping" section, or as a textured background element.
+2. **Two engineers (hi-vis vests, hard hats) reviewing a tablet, wind turbine in background** — collaboration/site-team shot, overcast lighting.
+3. **Aerial/drone shot of a monopole tower with panel antennas amid farmland, clear blue sky** — strong hero or "our infrastructure" candidate; matches the CI guide's tower imagery direction closely.
+4. **Two riggers in harnesses working on a lattice tower with antennas + microwave dish, dramatic sky** — action/installation shot, good for a "how we work" or capability section.
+5. **Senior engineer in hard hat/hi-vis reviewing a laptop in front of a building under construction** — site-inspection, more corporate/older-demographic representation.
+
+Note: several of these (turbine, generic construction site) read as stock imagery rather than Del Connect's own sites — fine for placeholder/context purposes now, but worth flagging if the final site should only use verified Del Connect-owned photography.
+
+Videos: pending, user is sending shortly.
+
 ## Next step
-Wait for images/video assets and any reference screenshots, then propose an actual homepage structure (sections, layout, interaction plan) before writing code.
+Wait for the video assets (and file-transferable versions of the photos above), then propose an actual homepage structure (sections, layout, interaction plan) before writing code. **Homepage build has not started.**
