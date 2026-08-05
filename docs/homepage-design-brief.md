@@ -1,6 +1,6 @@
 # Del Connect — Homepage Design Brief (working notes)
 
-Status: **gathering context only — no homepage build yet.**
+Status: **v1 homepage built** (see bottom of doc).
 
 ## Goal
 Build a unique, interactive Del Connect homepage — real animations/interactions, not a generic template. Should feel distinct from typical tower-company sites, while staying true to the Del Connect/NGG brand identity in `README.md` (orange + grey primary, navy as a touch accent; clean, structured, modern, calm-confident; Montserrat/Poppins/Arial).
@@ -36,7 +36,27 @@ Shared inline in chat — not yet saved as files in this environment (no filesys
 
 Note: several of these (turbine, generic construction site) read as stock imagery rather than Del Connect's own sites — fine for placeholder/context purposes now, but worth flagging if the final site should only use verified Del Connect-owned photography.
 
-Videos: pending, user is sending shortly.
+## Video assets (received as files, used in the build)
 
-## Next step
-Wait for the video assets (and file-transferable versions of the photos above), then propose an actual homepage structure (sections, layout, interaction plan) before writing code. **Homepage build has not started.**
+Four stock/reference tower clips, delivered as actual files this time (unlike the photos above) so they're committed into `assets/video/`. Re-encoded from source (originals ~58MB total 4K/HD) down to ~12MB total web-weight H.264, muted, looped, with matching poster frames in `assets/img/`:
+
+- `hero-tower-vertigo.mp4` — dead-straight upward shot through a lattice tower, slow rotation. Used as the **hero background** (the "wow" shot — nothing generic about it, distinct from all four reference sites).
+- `tower-groundlevel.mp4` — static ground-level shot of a red/white lattice tower against overcast sky. Used in the **About** section as a mouse-tilt video card.
+- `tower-periurban-aerial.mp4` — drone orbit around a tower in an informal/peri-urban settlement, technician working on it. Directly matches the CEO's "we focus on peri regions" note — used as the **Community** section's full-bleed background.
+- `tower-sky-angle.mp4` — dramatic low-angle shot of a tower top against blue sky. Used as the **Process/How We Work** section's side visual.
+
+## CEO terminology (logged, partially seeded into copy already)
+
+> Lease and development of towers · security solutions (new/future service) · assets & solutions · Wireless towers · empowerment of the community · tower acquisitions · selling and buying of towers · giving back to the community · we focus on peri regions
+
+These are woven into the v1 homepage build (see below) as generic-but-grounded copy — Solutions section titles map almost 1:1 to these terms, "Security Solutions" is marked "Expanding soon" since the CEO framed it as aspirational, and the peri-urban/community language drives the Community section. All still placeholder pending real company copy per `README.md`.
+
+## Status: Homepage v1 — built
+
+`index.html` + `assets/css/style.css` + `assets/js/main.js` now exist. Structure: glassmorphic fixed nav (blurred/transparent over hero, solidifies on scroll, glass mobile drawer) → full-bleed video hero with animated entrance + scroll parallax → looping badge marquee of the CEO's terms → About (split layout, tilt-interactive video card) → Solutions grid (5 cards, cursor-glow hover) → Community (full-bleed peri-urban video + gradient overlay) → Process (4-step timeline + video) → CTA/contact (navy gradient, glass contact card) → footer. Scroll-reveal throughout via IntersectionObserver, `prefers-reduced-motion` respected, videos pause when off-screen to save resources. Verified in a real headless-Chromium render at desktop + mobile widths, not just written blind.
+
+**Known gaps / next inputs needed:**
+- The five photos logged above are still only inline chat images, not files — none are in the repo yet. Current build is 100% video + CSS/gradient, no photography.
+- Company copy throughout is still generic/placeholder (consistent with `README.md`'s stated status).
+- Contact email placeholder uses `contactus@circletel.co.za` (pulled from the actual Del Connect letterhead mockup) — worth the user confirming this is the right inbox before launch.
+- No real logo file exists yet — nav/footer use a generic signal-mark placeholder icon, not the Group's actual Del Connect logo.
