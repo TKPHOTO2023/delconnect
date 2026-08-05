@@ -352,45 +352,6 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
 
 @keyframes rise { to { opacity: 1; transform: translateY(0); } }
 
-/* Badge marquee, overlapping hero bottom */
-.marquee-strip {
-  position: relative;
-  z-index: 2;
-  margin-top: -34px;
-}
-.marquee-mask {
-  overflow: hidden;
-  background: var(--glass-bg-strong);
-  border-top: 1px solid var(--glass-border);
-  border-bottom: 1px solid var(--glass-border);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 18px 0;
-}
-.marquee-track {
-  display: flex;
-  gap: 14px;
-  width: max-content;
-  animation: marquee 32s linear infinite;
-}
-.marquee-strip:hover .marquee-track { animation-play-state: paused; }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.pill {
-  display: flex; align-items: center; gap: 10px;
-  padding: 9px 20px;
-  border-radius: 100px;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  font-family: var(--font-primary);
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #fff;
-  white-space: nowrap;
-}
-.pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ngg-orange); }
-.pill.soon { color: rgba(255,255,255,0.7); }
-.pill.soon .dot { background: var(--grey-400); }
-
 /* ==========================================================================
    About
    ========================================================================== */

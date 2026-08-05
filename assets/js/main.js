@@ -64,25 +64,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealTargets.forEach(el => revealObserver.observe(el));
 
-/* ---- Badge marquee (built + duplicated for seamless loop) ---- */
-const marqueeItems = [
-  { label: 'Tower Leasing', soon: false },
-  { label: 'Co-location', soon: false },
-  { label: 'Tower Acquisitions', soon: false },
-  { label: 'Wireless Towers', soon: false },
-  { label: 'Security Solutions', soon: true },
-  { label: 'Peri-Urban Reach', soon: false },
-];
-const track = document.getElementById('marqueeTrack');
-if (track) {
-  const buildPills = () => marqueeItems.map(item => `
-    <span class="pill${item.soon ? ' soon' : ''}">
-      <span class="dot"></span>${item.label}${item.soon ? ' — soon' : ''}
-    </span>
-  `).join('');
-  track.innerHTML = buildPills() + buildPills();
-}
-
 /* ---- Hero video parallax on scroll ---- */
 const heroMedia = document.getElementById('heroMedia');
 if (heroMedia && !reduceMotion) {
