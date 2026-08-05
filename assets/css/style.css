@@ -338,7 +338,7 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
   object-position: center;
 }
 #heroMedia video {
-  transform: scale(1.65) translate(24%, 27%);
+  transform: scale(1.2) translate(6%, 14%);
   transform-origin: center;
 }
 .hero-overlay {
@@ -635,7 +635,7 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
   .hero { min-height: 620px; }
   .footer-grid { grid-template-columns: 1fr; }
   .video-section { padding: 100px 0; }
-  #heroMedia video { transform: scale(1.9) translate(0%, 32%); }
+  #heroMedia video { transform: scale(1.15) translate(0%, 10%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
