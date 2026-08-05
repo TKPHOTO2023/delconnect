@@ -162,11 +162,11 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
 
 .logo { display: flex; align-items: center; }
 .logo-full {
-  height: 32px;
+  height: 48px;
   width: auto;
   display: block;
 }
-.site-footer .logo-full { height: 38px; }
+.site-footer .logo-full { height: 52px; }
 
 .nav-links {
   display: flex;
