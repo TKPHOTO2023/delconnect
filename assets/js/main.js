@@ -2,6 +2,19 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/* ---- Theme toggle ---- */
+const root = document.documentElement;
+const setTheme = (theme) => {
+  root.setAttribute('data-theme', theme);
+  try { localStorage.setItem('dc-theme', theme); } catch (e) {}
+};
+const toggleTheme = () => {
+  setTheme(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+};
+[document.getElementById('themeToggle'), document.getElementById('themeToggleMobile')]
+  .filter(Boolean)
+  .forEach(btn => btn.addEventListener('click', toggleTheme));
+
 /* ---- Header scroll state ---- */
 const header = document.getElementById('siteHeader');
 const onScroll = () => {
