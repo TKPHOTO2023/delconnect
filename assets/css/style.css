@@ -160,22 +160,13 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
   gap: 24px;
 }
 
-.logo { display: flex; align-items: flex-start; flex-direction: column; gap: 4px; }
+.logo { display: flex; align-items: center; }
 .logo-full {
   height: 32px;
   width: auto;
   display: block;
 }
 .site-footer .logo-full { height: 38px; }
-.logo-sub {
-  display: block;
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
 
 .nav-links {
   display: flex;
