@@ -114,3 +114,37 @@ const videoObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.05 });
 bgVideos.forEach(v => videoObserver.observe(v));
+
+/* ---- Gallery + lightbox ---- */
+const galleryGrid = document.getElementById('galleryGrid');
+if (galleryGrid) {
+  const emptyNote = document.getElementById('galleryEmptyNote');
+  const items = galleryGrid.querySelectorAll('.gallery-item');
+  if (emptyNote) emptyNote.style.display = items.length ? 'none' : '';
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  const openLightbox = (img) => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCaption.textContent = img.closest('.gallery-item').querySelector('figcaption')?.textContent || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeLightbox = () => {
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  };
+
+  items.forEach(item => {
+    const img = item.querySelector('img');
+    if (img) img.addEventListener('click', () => openLightbox(img));
+  });
+  lightboxClose?.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+}

@@ -284,6 +284,25 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
 .nav-toggle.open span::before { top: 0; transform: rotate(45deg); }
 .nav-toggle.open span::after { top: 0; transform: rotate(-45deg); }
 
+/* Unscrolled header always floats over a dark hero/banner (by design, in
+   both themes) — so its text/controls stay light regardless of site theme.
+   Once scrolled, the header gets its own theme-coloured glass backdrop and
+   reverts to normal theme colours. */
+.site-header:not(.scrolled) .nav-links a { color: rgba(255, 255, 255, 0.78); }
+.site-header:not(.scrolled) .nav-links a:hover { color: #fff; }
+.site-header:not(.scrolled) .theme-toggle,
+.site-header:not(.scrolled) .nav-toggle,
+.site-header:not(.scrolled) .btn-ghost {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+.site-header:not(.scrolled) .theme-toggle svg { color: #fff; }
+.site-header:not(.scrolled) .nav-toggle span,
+.site-header:not(.scrolled) .nav-toggle span::before,
+.site-header:not(.scrolled) .nav-toggle span::after { background: #fff; }
+.site-header:not(.scrolled) .nav-toggle.open span { background: transparent; }
+
 .mobile-panel {
   position: fixed;
   top: 0; right: 0;
@@ -574,6 +593,101 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
 .contact-row svg { width: 20px; height: 20px; color: var(--ngg-orange); flex-shrink: 0; margin-top: 2px; }
 .contact-row .label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 2px; }
 .contact-row .value { color: var(--ink); font-weight: 500; }
+
+/* ==========================================================================
+   Page banner (interior pages, e.g. Gallery)
+   ========================================================================== */
+.page-banner {
+  padding: 168px 0 64px;
+  background: linear-gradient(150deg, var(--deep-bg) 0%, var(--deep-bg-2) 70%);
+  --ink: #FFFFFF;
+  --ink-muted: rgba(255, 255, 255, 0.75);
+}
+.page-banner h1 { max-width: 20ch; }
+.page-banner-sub { max-width: 56ch; font-size: 1.05rem; margin: 0; }
+
+/* ==========================================================================
+   Gallery
+   ========================================================================== */
+.gallery-grid {
+  columns: 3 300px;
+  column-gap: 20px;
+}
+.gallery-item {
+  break-inside: avoid;
+  margin: 0 0 20px;
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  cursor: zoom-in;
+  background: var(--bg-elevated);
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 500ms var(--ease);
+}
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-item figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 28px 16px 14px;
+  background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, transparent 100%);
+  color: #fff;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 0.86rem;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 260ms var(--ease), transform 260ms var(--ease);
+}
+.gallery-item:hover figcaption { opacity: 1; transform: translateY(0); }
+
+.gallery-empty-note {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.lightbox.open { display: flex; }
+.lightbox figure { margin: 0; max-width: min(1100px, 100%); max-height: 100%; }
+.lightbox img { max-width: 100%; max-height: 80vh; border-radius: var(--radius-sm); display: block; margin: 0 auto; }
+.lightbox figcaption { text-align: center; color: #fff; margin-top: 16px; font-family: var(--font-primary); font-weight: 600; }
+.lightbox-close {
+  position: absolute;
+  top: 24px; right: 24px;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(244,245,247,0.2);
+  background: rgba(244,245,247,0.08);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.lightbox-close svg { width: 20px; height: 20px; }
+
+@media (max-width: 980px) {
+  .gallery-grid { columns: 2 220px; }
+}
+@media (max-width: 640px) {
+  .gallery-grid { columns: 1; }
+  .page-banner { padding: 140px 0 48px; }
+}
 
 /* ==========================================================================
    Footer — fixed dark band, consistent in both themes

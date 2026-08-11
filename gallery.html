@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Del Connect</title>
+<meta name="description" content="A look at Del Connect's tower and infrastructure sites — leasing, co-location, and builds across the region.">
+
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('dc-theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+</script>
+
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav">
+    <a href="index.html" class="logo">
+      <img class="logo-full" src="assets/img/logo-full.png" alt="Del Connect">
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#solutions">Solutions</a></li>
+      <li><a href="index.html#community">Community</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+      </button>
+      <a href="index.html#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="Toggle light/dark theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+  </button>
+  <a href="index.html#home">Home</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#solutions">Solutions</a>
+  <a href="index.html#community">Community</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="index.html#contact" class="btn btn-primary">Get in touch</a>
+</div>
+
+<main>
+
+  <!-- ============ GALLERY HERO ============ -->
+  <section class="page-banner">
+    <div class="container">
+      <span class="eyebrow">Gallery</span>
+      <h1>Our sites, up close.</h1>
+      <p class="page-banner-sub">A look at the towers, builds, and installations behind Del Connect's network — leasing, co-location, and everything in between.</p>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY GRID ============ -->
+  <section class="section" style="padding-top:64px;">
+    <div class="container">
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!--
+          Add new photos by copying this block into the grid. The caption
+          shown on hover / in the lightbox comes from the <figcaption>.
+
+          <figure class="gallery-item" data-animate>
+            <img src="assets/img/gallery/aesthetic-lamp-poles.jpg" alt="Aesthetic lamp poles" loading="lazy">
+            <figcaption>Aesthetic lamp poles</figcaption>
+          </figure>
+        -->
+
+      </div>
+      <p class="gallery-empty-note" id="galleryEmptyNote">Site photos coming soon.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <figure>
+    <img id="lightboxImg" src="" alt="">
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo" style="margin-bottom:16px; display:inline-flex;">
+          <img class="logo-full" src="assets/img/logo-full.png" alt="Del Connect">
+        </a>
+        <p class="footer-blurb">Tower leasing and infrastructure co-location — a division of New Generation Group, focused on peri-urban regions across the country.</p>
+      </div>
+
+      <div>
+        <div class="footer-heading">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#solutions">Solutions</a>
+          <a href="index.html#community">Community</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-heading">New Generation Group</div>
+        <div class="footer-links">
+          <span>Imagine House, 2 Mellis Road,<br>Rivonia, Sandton, 2191</span>
+          <a href="tel:+27870876307">+27 87 087 6307</a>
+          <a href="mailto:contactus@delconnect.co.za">contactus@delconnect.co.za</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Del Connect — a division of New Generation Group (Pty) Ltd. All rights reserved.</span>
+      <span>Circle Tel · Delphius · SHERQ 365 · New ExGen · Account Caddie</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
