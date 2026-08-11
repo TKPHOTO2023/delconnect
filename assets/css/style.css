@@ -609,6 +609,13 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
 /* ==========================================================================
    Gallery
    ========================================================================== */
+.gallery-category { margin-bottom: 56px; }
+.gallery-category-title {
+  font-size: 1.05rem;
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--glass-border);
+}
 .gallery-grid {
   columns: 3 300px;
   column-gap: 20px;

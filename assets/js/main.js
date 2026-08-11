@@ -116,10 +116,9 @@ const videoObserver = new IntersectionObserver((entries) => {
 bgVideos.forEach(v => videoObserver.observe(v));
 
 /* ---- Gallery + lightbox ---- */
-const galleryGrid = document.getElementById('galleryGrid');
-if (galleryGrid) {
+const items = document.querySelectorAll('.gallery-item');
+if (items.length || document.getElementById('galleryEmptyNote')) {
   const emptyNote = document.getElementById('galleryEmptyNote');
-  const items = galleryGrid.querySelectorAll('.gallery-item');
   if (emptyNote) emptyNote.style.display = items.length ? 'none' : '';
 
   const lightbox = document.getElementById('lightbox');
