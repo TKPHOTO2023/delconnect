@@ -58,5 +58,5 @@ These are woven into the v1 homepage build (see below) as generic-but-grounded c
 **Known gaps / next inputs needed:**
 - The five photos logged above are still only inline chat images, not files — none are in the repo yet. Current build is 100% video + CSS/gradient, no photography.
 - Company copy throughout is still generic/placeholder (consistent with `README.md`'s stated status).
-- Contact email placeholder uses `contactus@circletel.co.za` (pulled from the actual Del Connect letterhead mockup) — worth the user confirming this is the right inbox before launch.
-- No real logo file exists yet — nav/footer use a generic signal-mark placeholder icon, not the Group's actual Del Connect logo.
+- ~~Contact email placeholder uses `contactus@circletel.co.za`~~ — resolved: confirmed real Del Connect contact details now live site-wide — Imagine House, 2 Mellis Road, Rivonia, Sandton, 2191 · +27 87 087 6307 · contactus@delconnect.co.za.
+- ~~No real logo file exists yet~~ — resolved: the real Del Connect logo (icon + full lockup) is in `assets/img/` and used in the nav/footer/favicon.
