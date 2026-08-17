@@ -81,6 +81,32 @@ if (heroMedia && !reduceMotion) {
   }, { passive: true });
 }
 
+/* ---- Generic section image parallax (e.g. Community backdrop) ---- */
+const parallaxImgs = document.querySelectorAll('[data-parallax]');
+if (parallaxImgs.length && !reduceMotion) {
+  let parallaxTicking = false;
+  const updateParallax = () => {
+    const vh = window.innerHeight;
+    parallaxImgs.forEach(img => {
+      const section = img.closest('.hero-media')?.parentElement;
+      if (!section) return;
+      const rect = section.getBoundingClientRect();
+      const progress = (vh - rect.top) / (vh + rect.height) - 0.5; // -0.5 .. 0.5 across the scroll traverse
+      const maxOffset = rect.height * 0.12;
+      const offset = Math.max(-maxOffset, Math.min(maxOffset, progress * 2 * maxOffset));
+      img.style.transform = `translateY(${offset.toFixed(1)}px)`;
+    });
+    parallaxTicking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (parallaxTicking) return;
+    parallaxTicking = true;
+    requestAnimationFrame(updateParallax);
+  }, { passive: true });
+  window.addEventListener('resize', updateParallax);
+  updateParallax();
+}
+
 /* ---- Tilt card (About section) ---- */
 const tiltCard = document.getElementById('tiltCard');
 if (tiltCard && !reduceMotion && window.matchMedia('(hover: hover)').matches) {

@@ -488,7 +488,15 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
   --ink: #FFFFFF;
   --ink-muted: rgba(255, 255, 255, 0.78);
 }
-.video-section .hero-media { z-index: -2; }
+.video-section .hero-media { z-index: -2; overflow: hidden; }
+.video-section .hero-media img[data-parallax] {
+  position: absolute;
+  top: -14%; left: 0;
+  width: 100%;
+  height: 128%;
+  object-fit: cover;
+  will-change: transform;
+}
 .video-section .hero-overlay {
   background:
     linear-gradient(180deg, var(--scrim-1) 0%, rgba(0,0,0,0.5) 50%, var(--scrim-3) 100%);
