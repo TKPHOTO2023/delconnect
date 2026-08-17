@@ -127,7 +127,7 @@ if (items.length || document.getElementById('galleryEmptyNote')) {
   const lightboxClose = document.getElementById('lightboxClose');
 
   const openLightbox = (img) => {
-    lightboxImg.src = img.src;
+    lightboxImg.src = img.dataset.full || img.src;
     lightboxImg.alt = img.alt;
     lightboxCaption.textContent = img.closest('.gallery-item').querySelector('figcaption')?.textContent || '';
     lightbox.classList.add('open');
