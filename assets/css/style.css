@@ -557,19 +557,68 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
   gap: 50px;
   align-items: center;
 }
-.contact-card {
+.contact-info-list { margin-top: 32px; }
+.contact-row { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(244,245,247,0.14); }
+.contact-row:last-child { border-bottom: none; }
+.contact-row svg { width: 20px; height: 20px; color: var(--ngg-orange); flex-shrink: 0; margin-top: 2px; }
+.contact-row .label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 2px; }
+.contact-row .value { color: var(--ink); font-weight: 500; }
+.contact-row .value a:hover { color: var(--ngg-orange); }
+
+/* ---- Contact form ---- */
+.contact-form {
   padding: 32px;
   border-radius: var(--radius);
   background: rgba(244,245,247,0.06);
   border: 1px solid rgba(244,245,247,0.14);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
-.contact-row { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(244,245,247,0.14); }
-.contact-row:last-child { border-bottom: none; }
-.contact-row svg { width: 20px; height: 20px; color: var(--ngg-orange); flex-shrink: 0; margin-top: 2px; }
-.contact-row .label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 2px; }
-.contact-row .value { color: var(--ink); font-weight: 500; }
+.form-row { display: flex; flex-direction: column; gap: 8px; }
+.form-row label {
+  font-family: var(--font-primary);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.form-row label .optional { text-transform: none; font-weight: 400; letter-spacing: normal; opacity: 0.7; }
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(244,245,247,0.18);
+  background: rgba(0,0,0,0.18);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color 200ms ease, background 200ms ease;
+}
+.form-row textarea { resize: vertical; min-height: 90px; }
+.form-row input::placeholder,
+.form-row textarea::placeholder { color: var(--ink-muted); }
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--ngg-orange);
+  background: rgba(0,0,0,0.28);
+}
+.form-row select { cursor: pointer; }
+.form-row select option { background: var(--deep-bg-2); color: #fff; }
+.contact-form .btn { align-self: flex-start; }
+.form-note {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+.form-note.success { color: var(--ngg-orange); font-weight: 600; }
 
 /* ==========================================================================
    Page banner (interior pages, e.g. Gallery)

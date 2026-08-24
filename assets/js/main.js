@@ -173,3 +173,41 @@ if (items.length || document.getElementById('galleryEmptyNote')) {
   lightbox?.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 }
+
+/* ---- Contact form (mailto) ---- */
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  const formNote = document.getElementById('formNote');
+  const defaultNote = formNote ? formNote.textContent : '';
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = contactForm.name.value.trim();
+    const email = contactForm.email.value.trim();
+    const phone = contactForm.phone.value.trim();
+    const type = contactForm.type.value;
+    const message = contactForm.message.value.trim();
+
+    const subject = `Website enquiry — ${type} — ${name}`;
+    const bodyLines = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      phone ? `Phone: ${phone}` : null,
+      `Enquiry type: ${type}`,
+      '',
+      message,
+    ].filter(Boolean);
+
+    const mailto = `mailto:contactus@delconnect.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+    window.location.href = mailto;
+
+    if (formNote) {
+      formNote.textContent = 'Opening your email app — press send there to complete your enquiry.';
+      formNote.classList.add('success');
+      setTimeout(() => {
+        formNote.textContent = defaultNote;
+        formNote.classList.remove('success');
+      }, 6000);
+    }
+  });
+}
