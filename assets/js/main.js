@@ -188,7 +188,7 @@ if (contactForm) {
     const type = contactForm.type.value;
     const message = contactForm.message.value.trim();
 
-    const subject = `Website enquiry — ${type} — ${name}`;
+    const subject = `Website enquiry: ${name} (${type})`;
     const bodyLines = [
       `Name: ${name}`,
       `Email: ${email}`,
@@ -202,7 +202,7 @@ if (contactForm) {
     window.location.href = mailto;
 
     if (formNote) {
-      formNote.textContent = 'Opening your email app — press send there to complete your enquiry.';
+      formNote.textContent = 'Opening your email app. Press send there to complete your enquiry.';
       formNote.classList.add('success');
       setTimeout(() => {
         formNote.textContent = defaultNote;
